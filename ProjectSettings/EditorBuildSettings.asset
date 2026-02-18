@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Planetario.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 40f16c1c7f637e943871282b8b63dd4c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: a4487d16d7f92ee49b199ea7f06ac819, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a2ed161d60dd2d4c8e311aae297d138, type: 2}
   m_UseUCBPForAssetBundles: 0
