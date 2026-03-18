@@ -1051,6 +1051,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5749897140314435938, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1521959716}
+    - targetCorrespondingSourceObject: {fileID: 5749897140314435938, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521959719}
+    - targetCorrespondingSourceObject: {fileID: 5749897140314435938, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521959720}
   m_SourcePrefab: {fileID: 100100000, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
 --- !u!1 &1521959714 stripped
 GameObject:
@@ -1135,11 +1141,45 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1521959719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521959714}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b079a0def1acf59429bd4803fe38e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  rotationSpeed: 100
+  cameraTransform: {fileID: 1801258525}
+  movementInput: {x: 0, y: 0}
+  turbulenceIterations: 1000000
+--- !u!114 &1521959720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521959714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109412c4d785ece41bd8d22b77133606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  rotationSpeed: 100
+  cameraTransform: {fileID: 1801258525}
+  movementInput: {x: 0, y: 0}
+  turbulenceIterations: 1000000
 --- !u!1 &1542861210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1396,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1801258525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3488360384252688657, guid: aab6e54e1def02546a8d4b1ea9f7ccaf, type: 3}
+  m_PrefabInstance: {fileID: 1817958076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1817958076
 PrefabInstance:
   m_ObjectHideFlags: 0
