@@ -1057,6 +1057,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5749897140314435938, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1521959720}
+    - targetCorrespondingSourceObject: {fileID: 5749897140314435938, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521959721}
+    - targetCorrespondingSourceObject: {fileID: 5749897140314435938, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521959722}
   m_SourcePrefab: {fileID: 100100000, guid: dbaff94d077d3c847b0a5840c0da435b, type: 3}
 --- !u!1 &1521959714 stripped
 GameObject:
@@ -1170,7 +1176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521959714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 109412c4d785ece41bd8d22b77133606, type: 3}
   m_Name: 
@@ -1180,6 +1186,43 @@ MonoBehaviour:
   cameraTransform: {fileID: 1801258525}
   movementInput: {x: 0, y: 0}
   turbulenceIterations: 1000000
+--- !u!114 &1521959721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521959714}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1256fde5dd2b7dd41832cf7ea07f44ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  rotationSpeed: 100
+  cameraTransform: {fileID: 1801258525}
+  movementInput: {x: 0, y: 0}
+  turbulenceIterations: 1000000
+  read: 0
+--- !u!114 &1521959722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521959714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4768d769d2a9864468c9bbaf51089ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  rotationSpeed: 80
+  cameraTransform: {fileID: 1801258525}
+  movementInput: {x: 0, y: 0}
+  turbulenceIterations: 1000
+  read: 0
+  write: 0
 --- !u!1 &1542861210
 GameObject:
   m_ObjectHideFlags: 0
