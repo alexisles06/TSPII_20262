@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Flight : MonoBehaviour
 {
     public float speed = 50f;
-    public float rotationSpeed = 100f;
+    public float rotationSpeed = 80f;
     public Transform cameraTransform;
     public Vector2 movementInput;
 

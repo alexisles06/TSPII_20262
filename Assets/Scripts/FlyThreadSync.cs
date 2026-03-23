@@ -5,10 +5,10 @@ using System.Threading;
 using Unity.VisualScripting;
 using System.IO;
 
-public class FlightThreadNoSinc : MonoBehaviour
+public class FlightThreadSync : MonoBehaviour
 {
     public float speed = 50f;
-    public float rotationSpeed = 80f;
+    public float rotationSpeed = 50f;
     public Transform cameraTransform;
     public Vector2 movementInput;
 
@@ -26,6 +26,9 @@ public class FlightThreadNoSinc : MonoBehaviour
 
     //Manipular el archivo de texto
     public bool read = false;
+    public bool write = false;
+    private object fileLock = new object();
+
     //Ruta de almacenamiento del archivo
     string filePath;
 
@@ -71,8 +74,13 @@ public class FlightThreadNoSinc : MonoBehaviour
         float yaw = movementInput.x * rotationSpeed * Time.deltaTime;
         this.transform.Rotate(0, yaw, 0);
 
-        //Actividad 3: Metodo para la lectura del archivo
-        TryReadFile();
+        //Actividad 3: Metodo para la lectura sincronizada del archivo
+        if(write && !read)
+        {
+            TryReadFile();
+            read = true;
+        }
+        
     }
 
     public void SimulateTurbulence(float time)
@@ -89,9 +97,9 @@ public class FlightThreadNoSinc : MonoBehaviour
             }
 
             Vector3 force = new Vector3(
-                Mathf.PerlinNoise(i * 0.0001f, time) * 2 - 1,
-                Mathf.PerlinNoise(i * 0.0002f, time) * 2 - 1,
-                Mathf.PerlinNoise(i * 0.0003f, time) * 2 - 1
+                Mathf.PerlinNoise(i * 0.00001f, time) * 2 - 1,
+                Mathf.PerlinNoise(i * 0.00002f, time) * 2 - 1,
+                Mathf.PerlinNoise(i * 0.00003f, time) * 2 - 1
             );
             turbulenceForces.Add(force);
         }
@@ -99,20 +107,26 @@ public class FlightThreadNoSinc : MonoBehaviour
         //Señal en consola de inicio de hilo
         Debug.Log("Iniciando simulacion de turbulencia");
 
-        ////Actividad 3: Metodo para la escritura del archivo
-        using (StreamWriter writer = new StreamWriter(filePath, false))
+        Debug.Log("Escribiendo archivo...");
+
+        //Actividad 3: Metodo para la escritura del archivo
+        lock (fileLock)
         {
-            foreach (var force in turbulenceForces)
+            using (StreamWriter writer = new StreamWriter(filePath, false))
             {
-                writer.WriteLine(force.ToString());
+                foreach (var force in turbulenceForces)
+                {
+                    writer.WriteLine(force.ToString());
+                }
+                writer.Flush();
             }
-            writer.Flush();
         }
 
         Debug.Log("Archivo escrito");
 
         //Simulación completa
         isTurbulenceRunning = false;
+        write = true;
     }
 
 
@@ -120,12 +134,23 @@ public class FlightThreadNoSinc : MonoBehaviour
     {
         try
         {
-            string content = File.ReadAllText(filePath);
-            Debug.Log("Archivo leido " + content);
+            lock (fileLock)
+            {
+                if (File.Exists(filePath))
+                {
+                    string content = File.ReadAllText(filePath);
+                    Debug.Log("Archivo leido " + content);
+                }
+                else
+                {
+                    Debug.LogError("Ocurrio un problema");
+                }
+            }
+            
         }
         catch (IOException ex)
         {
-            Debug.LogError("Error de accedo al archivo " + ex.Message);                                                                                                                         
+            Debug.LogError("Error de accedo al archivo " + ex.Message);
         }
     }
 
