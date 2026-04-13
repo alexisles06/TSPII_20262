@@ -80,3 +80,7 @@ crashlytics-build.properties
 # MacOS
 .DS_Store
 **/.DS_Store
+
+# Vuforia (archivos pesados)
+*.tgz
+*.tar.gz
