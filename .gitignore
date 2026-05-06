@@ -84,3 +84,20 @@ crashlytics-build.properties
 # Vuforia (archivos pesados)
 *.tgz
 *.tar.gz
+
+# Firebase SDK (Unity)
+
+# SDK de Firebase en Plugins
+Assets/Plugins/Android/Firebase*
+Assets/Plugins/Android/*firebase*
+Assets/Plugins/iOS/Firebase*
+
+# Binarios pesados tipicos del SDK
+*.aar
+*.jar
+*.bundle
+*.framework
+
+# Builds generados (Firebase usa Gradle)
+**/build/
+**/gradleOut/

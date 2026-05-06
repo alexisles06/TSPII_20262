@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "812455768292",
+    "firebase_url": "https://tspp320262-default-rtdb.firebaseio.com",
+    "project_id": "tspp320262",
+    "storage_bucket": "tspp320262.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812455768292:android:a31a2b722ebd30f72e3cf1",
+        "android_client_info": {
+          "package_name": "com.IslasCorp.TSPP32026"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlJcJw2OiYn2OpFyb7ZHzNTdjoD54K_fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
